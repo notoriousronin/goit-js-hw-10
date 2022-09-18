@@ -21,15 +21,17 @@ function onSearch(e) {
   }
 }
 
-function renderCountryMark(countries) {
+function renderCountry(countries) {
   if (countries.length > 10) {
-    Notify.info('Too many matches found. Please enter a more specific name.');
+    Notify.info('Too many matches found. Please enter a more specific name');
     return;
   }
+
   if (2 < countries.length && countries.length < 10) {
     renderCountryList(countries);
     return;
   }
+
   renderCountryInfo(countries);
 }
 
@@ -59,7 +61,7 @@ function renderCountryInfo(countries) {
               ', '
             )}</p>`;
   });
-  refs.countryInfo.innerHTML = markup;
+  countryInfo.innerHTML = markup;
 }
 
 function onFetchError(error) {
