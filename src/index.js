@@ -17,7 +17,7 @@ function onSearch(e) {
   countryList.innerHTML = '';
   const searchQuery = e.target.value.trim();
   if (searchQuery !== '') {
-    fetchCountries(searchQuery).then(renderCountryMark).catch(onFetchError);
+    fetchCountries(searchQuery).then(renderCountry).catch(onFetchError);
   }
 }
 
