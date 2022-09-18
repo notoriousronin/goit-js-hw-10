@@ -3,16 +3,15 @@ import Notiflix, { Notify } from 'notiflix';
 import debounce from 'lodash.debounce';
 import { fetchCountries } from './fetchCountries';
 
+const DEBOUNCE_DELAY = 300;
+
 const inputEl = document.querySelector('#search-box');
 const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 
-const DEBOUNCE_DELAY = 300;
-
-inputEl.addEventListener('submit', debounce(onSearch, DEBOUNCE_DELAY));
+inputEl.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 
 function onSearch(e) {
-  e.preventDefault();
   countryInfo.innerHTML = '';
   countryList.innerHTML = '';
   const searchQuery = e.target.value.trim();
