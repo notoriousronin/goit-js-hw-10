@@ -49,7 +49,9 @@ function renderCountryList(countries) {
 function renderCountryInfo(countries) {
   const markup = countries.map(country => {
     return `<div class="country-flag-name">
-              <img src="${country.flags.svg}" width = 35 height = 35>
+              <img src="${
+                country.flags.svg
+              }" alt = "flag" width = 35 height = 35>
               <span><b style="font-size: 20px">${
                 country.name.official
               }</b></span>
